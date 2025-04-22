@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        #qr-container {
+            margin-top: 20px;
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            /* Ensure container size adjusts or is fixed */
+            min-height: 200px; /* Example minimum height */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #qr-canvas {
+            display: block; /* Initially hidden or shown */
+        }
+        #qr-image {
+             display: none; /* Initially hidden */
+             max-width: 100%; /* Ensure image scales */
+        }
+        label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"] {
+            padding: 10px;
+            margin-bottom: 15px;
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #error-message {
+            color: red;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript QR Code Generator</h1>
+
+    <label for="qr-data">Enter Data (URL, text, etc.):</label>
+    <input type="text" id="qr-data" placeholder="e.g., https://www.google.com">
+
+    <button id="generate-btn">Generate QR Code</button>
+
+    <div id="qr-container">
+        <canvas id="qr-canvas"></canvas>
+
+        </div>
+    <div id="error-message"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@latest/build/qrcode.min.js"></script>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
